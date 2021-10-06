@@ -23,10 +23,7 @@ public class NbpClient {
     private final RestTemplate restTemplate;
 
     public void sendRequest(TableType table, LocalDate date, int limit) {
-        StringBuilder url;
-
-        url = new StringBuilder("http://api.nbp.pl/api/exchangerates/tables/");
-        url.append(table).append("/");
+        StringBuilder url = preparePath(table);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -45,8 +42,15 @@ public class NbpClient {
         }
 
         List<NbpTableRate> rates = Collections.unmodifiableList(getNbpTableRates(responseEntity));
-
         printTable(date, rates);
+    }
+
+    private StringBuilder preparePath(TableType table) {
+        StringBuilder url;
+
+        url = new StringBuilder("http://api.nbp.pl/api/exchangerates/tables/");
+        url.append(table).append("/");
+        return url;
     }
 
     private List<NbpTableRate> getNbpTableRates(ResponseEntity<NbpTable[]> responseEntity) {
