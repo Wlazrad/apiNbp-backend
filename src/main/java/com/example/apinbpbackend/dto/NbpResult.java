@@ -1,0 +1,16 @@
+package com.example.apinbpbackend.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class NbpResult {
+    private String currency;
+    private BigDecimal bid;
+    private BigDecimal ask;
+}
