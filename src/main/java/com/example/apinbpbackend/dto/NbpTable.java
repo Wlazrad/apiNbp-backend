@@ -1,4 +1,4 @@
-package com.example.apinbpbackend.services;
+package com.example.apinbpbackend.dto;
 
 import com.example.apinbpbackend.dto.NbpTableRate;
 import lombok.Getter;

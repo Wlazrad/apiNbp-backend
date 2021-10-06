@@ -1,6 +1,8 @@
 package com.example.apinbpbackend.services;
 
+import com.example.apinbpbackend.dto.NbpTable;
 import com.example.apinbpbackend.dto.NbpTableRate;
+import com.example.apinbpbackend.dto.TableType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
